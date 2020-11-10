@@ -1,0 +1,11 @@
+* {
+    /* background-color: #00ffffff; */
+}
+
+body {
+    background-color: rgba(102, 140, 255, 0.25);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

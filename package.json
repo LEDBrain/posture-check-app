@@ -1,0 +1,18 @@
+{
+  "name": "posture-check-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron --enable-transparent-visuals ."
+  },
+  "author": "KokosnussDEV",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^10.1.5"
+  },
+  "dependencies": {
+    "ms": "^2.1.2"
+  }
+}
