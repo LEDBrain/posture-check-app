@@ -4,8 +4,19 @@
 
 body {
     background-color: rgba(102, 140, 255, 0.25);
-    text-align: center;
+}
+
+h1 {
+    user-select: none;
+}
+
+.container {
     display: flex;
-    align-items: center;
     justify-content: center;
+}
+
+.child {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
 }

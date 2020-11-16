@@ -18,6 +18,7 @@ const createWindow = () => {
             nodeIntegration: true,
             preload: path.join(__dirname, 'preload.js'),
         },
+        show: true,
     });
 
     // win.hide();
@@ -35,10 +36,55 @@ let t;
 const postureTimer = () => {
     t = setTimeout(() => {
         win.show();
+        win.setFullScreen(true);
         //win.maximize();
         clearTimeout(t);
     }, TIME);
-}
+};
+
+const iconPath = path.join(__dirname, 'icon.png');
+const contextMenu = Menu.buildFromTemplate([
+    {
+        label: 'Times',
+        submenu: [
+            {
+                type: 'radio',
+                label: '10 min',
+                click: item => {
+                    TIME = ms('10m');
+                    item.checked = true;
+                    postureTimer();
+                },
+            },
+            {
+                type: 'radio',
+                label: '15 min (recommended)',
+                click: item => {
+                    TIME = ms('15m');
+                    item.checked = true;
+                    postureTimer();
+                },
+                checked: true,
+            },
+            {
+                type: 'radio',
+                label: '20 min',
+                click: item => {
+                    TIME = ms('20m');
+                    item.checked = true;
+                    postureTimer();
+                },
+            },
+        ],
+    },
+    {
+        label: 'Close',
+        click: () => {
+            win.destroy();
+            app.quit();
+        },
+    },
+]);
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -48,55 +94,10 @@ app.whenReady().then(() => {
         createWindow();
     }, 500);
 
-    const iconPath = path.join(__dirname, 'icon.png');
     const tray = new Tray(iconPath);
-    const contextMenu = Menu.buildFromTemplate(
-        [
-            {
-                label: 'Times',
-                submenu: [
-                    {
-                        type: 'radio',
-                        label: '10 min',
-                        click: (item) => {
-                            TIME = ms('10m');
-                            item.checked = true;
-                            postureTimer();
-                        },
-                    },
-                    {
-                        type: 'radio',
-                        label: '15 min (recommended)',
-                        click: (item) => {
-                            TIME = ms('15m');
-                            item.checked = true;
-                            postureTimer();
-                        },
-                        checked: true,
-                    },
-                    {
-                        type: 'radio',
-                        label: '20 min',
-                        click: (item) => {
-                            TIME = ms('20m');
-                            item.checked = true;
-                            postureTimer();
-                        },
-                    },
-                ],
-            },
-            {
-                label: 'Close',
-                click: () => {
-                    win.destroy();
-                    app.quit();
-                },
-            },
-        ]
-    );
     tray.setToolTip('Posture Check App');
-    tray.setContextMenu(contextMenu);
-  
+    // tray.setContextMenu(contextMenu);
+
     app.on('activate', () => {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
@@ -106,6 +107,7 @@ app.whenReady().then(() => {
     globalShortcut.register('Esc', () => {
         if (win.isMinimized()) return;
         win.hide();
+        tray.setContextMenu(contextMenu);
         postureTimer();
     });
 });
