@@ -1,0 +1,21 @@
+{
+    "env": {
+        "node": true,
+        "es2020": true,
+        "jest": true
+    },
+    "plugins": ["prettier"],
+    "extends": [
+        "eslint:recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "rules": {
+        "guard-for-in": 2,
+        "no-prototype-builtins": 0,
+        "prettier/prettier": "error",
+        "semi": ["error", "always"]
+    }
+}
