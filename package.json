@@ -13,7 +13,7 @@
     "author": "TeamCoffeeCodes <coffee@teamcoffee.codes>",
     "license": "MIT",
     "devDependencies": {
-        "electron": "^10.1.5",
+        "electron": "^10.2.0",
         "electron-builder": "^22.9.1",
         "electron-builder-squirrel-windows": "^22.9.1",
         "eslint": "^7.13.0",
