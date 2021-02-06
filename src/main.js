@@ -42,7 +42,7 @@ const postureTimer = () => {
     }, TIME);
 };
 
-const iconPath = path.join(__dirname, 'icon.png');
+const iconPath = path.join(__dirname, '/assets/icon.png');
 const contextMenu = Menu.buildFromTemplate([
     {
         label: 'Times',
