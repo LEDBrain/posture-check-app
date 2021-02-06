@@ -17,18 +17,12 @@ const createWindow = () => {
         resizable: false,
         webPreferences: {
             nodeIntegration: true,
-            preload: path.join(__dirname, 'preload.js'),
         },
         show: true,
     });
 
-    // win.hide();
-
     // and load the index.html of the app.
     win.loadFile(path.join(__dirname, 'index.html'));
-
-    // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
 };
 
 let TIME = ms('15m');
@@ -38,7 +32,6 @@ const postureTimer = () => {
     t = setTimeout(() => {
         win.show();
         win.setFullScreen(true);
-        //win.maximize();
         clearTimeout(t);
     }, TIME);
 };
@@ -97,7 +90,6 @@ app.whenReady().then(() => {
 
     const tray = new Tray(iconPath);
     tray.setToolTip('Posture Check App');
-    // tray.setContextMenu(contextMenu);
 
     app.on('activate', () => {
         // On macOS it's common to re-create a window in the app when the
