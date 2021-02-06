@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
-html {
+html, body, .container {
     min-height: 100vh;
 }
 
@@ -23,6 +23,7 @@ h1 {
 .container {
     margin: 0;
     display: flex;
+    flex-flow: column;
+    align-items: center;
     justify-content: center;
-    justify-items: center;
 }
