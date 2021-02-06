@@ -1,22 +1,39 @@
-* {
-    /* background-color: #00ffffff; */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html,
+body,
+.container {
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 body {
-    background-color: rgba(102, 140, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 h1 {
     user-select: none;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+}
+
+p {
+    user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
+    margin: 0;
     display: flex;
+    flex-flow: column;
+    align-items: center;
     justify-content: center;
-}
-
-.child {
-    position: absolute;
-    top: 50%;
-    margin-top: -25px;
 }

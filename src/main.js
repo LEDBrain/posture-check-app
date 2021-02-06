@@ -14,38 +14,35 @@ const createWindow = () => {
         frame: false,
         transparent: true,
         fullscreen: true,
+        resizable: false,
         webPreferences: {
             nodeIntegration: true,
-            preload: path.join(__dirname, 'preload.js'),
         },
         show: true,
     });
 
-    // win.hide();
-
     // and load the index.html of the app.
     win.loadFile(path.join(__dirname, 'index.html'));
-
-    // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
 };
 
 let TIME = ms('15m');
 let t;
+let PAUSED = false;
 
 const postureTimer = () => {
     t = setTimeout(() => {
-        win.show();
-        win.setFullScreen(true);
-        //win.maximize();
-        clearTimeout(t);
+        if (!PAUSED) {
+            win.show();
+            win.setFullScreen(true);
+            clearTimeout(t);
+        }
     }, TIME);
 };
 
-const iconPath = path.join(__dirname, 'icon.png');
+const iconPath = path.join(__dirname, '/assets/posture_check.png');
 const contextMenu = Menu.buildFromTemplate([
     {
-        label: 'Times',
+        label: 'Duration',
         submenu: [
             {
                 type: 'radio',
@@ -78,11 +75,18 @@ const contextMenu = Menu.buildFromTemplate([
         ],
     },
     {
-        label: 'Close',
-        click: () => {
-            win.destroy();
-            app.quit();
+        type: 'checkbox',
+        label: 'Paused',
+        checked: false,
+        click: item => {
+            item.checked = !!item.checked;
+            PAUSED = item.checked;
+            postureTimer();
         },
+    },
+    {
+        label: 'Close',
+        role: 'quit',
     },
 ]);
 
@@ -96,7 +100,6 @@ app.whenReady().then(() => {
 
     const tray = new Tray(iconPath);
     tray.setToolTip('Posture Check App');
-    // tray.setContextMenu(contextMenu);
 
     app.on('activate', () => {
         // On macOS it's common to re-create a window in the app when the
