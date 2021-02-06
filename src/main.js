@@ -14,6 +14,7 @@ const createWindow = () => {
         frame: false,
         transparent: true,
         fullscreen: true,
+        resizable: false,
         webPreferences: {
             nodeIntegration: true,
             preload: path.join(__dirname, 'preload.js'),
@@ -42,7 +43,7 @@ const postureTimer = () => {
     }, TIME);
 };
 
-const iconPath = path.join(__dirname, '/assets/icon.png');
+const iconPath = path.join(__dirname, '/assets/posture_check.png');
 const contextMenu = Menu.buildFromTemplate([
     {
         label: 'Times',
