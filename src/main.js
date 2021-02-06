@@ -39,7 +39,7 @@ const postureTimer = () => {
 const iconPath = path.join(__dirname, '/assets/posture_check.png');
 const contextMenu = Menu.buildFromTemplate([
     {
-        label: 'Times',
+        label: 'Duration',
         submenu: [
             {
                 type: 'radio',
