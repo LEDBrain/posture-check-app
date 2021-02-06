@@ -28,21 +28,36 @@
     "build": {
         "appId": "codes.teamcoffee.posture-check-app",
         "mac": {
-            "category": "public.app-category.utilities"
+            "target": "default",
+            "category": "public.app-category.utilities",
+            "icon": "src/assets/posture_check.png"
         },
         "win": {
             "publisherName": "TeamCoffeeCodes",
+            "icon": "src/assets/posture_check.png",
             "target": [
                 {
-                    "target": "nsis"
-                },
-                {
-                    "target": "squirrel"
+                    "target": "squirrel",
+                    "arch": [
+                        "x64"
+                    ]
                 }
             ]
         },
-        "nsis": {
-            "oneClick": false
+        "squirrelWindows": {
+            "remoteReleases": true,
+            "iconUrl": "https://github.com/TeamCoffeeCode/posture-check-app/blob/master/src/assets/icon.ico?raw=true"
+        },
+        "linux": {
+            "category": "Utility",
+            "target": [
+                {
+                    "target": "appImage"
+                },
+                {
+                    "target": "deb"
+                }
+            ]
         }
     }
 }
