@@ -27,12 +27,15 @@ const createWindow = () => {
 
 let TIME = ms('15m');
 let t;
+let PAUSED = false;
 
 const postureTimer = () => {
     t = setTimeout(() => {
-        win.show();
-        win.setFullScreen(true);
-        clearTimeout(t);
+        if (!PAUSED) {
+            win.show();
+            win.setFullScreen(true);
+            clearTimeout(t);
+        }
     }, TIME);
 };
 
@@ -72,11 +75,18 @@ const contextMenu = Menu.buildFromTemplate([
         ],
     },
     {
-        label: 'Close',
-        click: () => {
-            win.destroy();
-            app.quit();
+        type: 'checkbox',
+        label: 'Paused',
+        checked: false,
+        click: item => {
+            item.checked = !!item.checked;
+            PAUSED = item.checked;
+            postureTimer();
         },
+    },
+    {
+        label: 'Close',
+        role: 'quit',
     },
 ]);
 
