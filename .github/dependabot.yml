@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    assignees:
+      - "KokosnussDEV"
+    commit-message:
+        prefix: "⬆️"
+        include: "scope"
+    reviewers:
+      - "KokosnussDEV"
+    open-pull-requests-limit: 10
+    target-branch: "dev"
