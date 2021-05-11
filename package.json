@@ -38,12 +38,6 @@
             "icon": "src/assets/posture_check.png",
             "target": [
                 {
-                    "target": "squirrel",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
                     "target": "nsis",
                     "arch": [
                         "x64",
