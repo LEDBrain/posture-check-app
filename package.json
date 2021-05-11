@@ -1,6 +1,6 @@
 {
     "name": "posture-check-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A friendly reminder to check your posture",
     "main": "src/main.js",
     "private": true,
