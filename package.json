@@ -8,7 +8,9 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "electron .",
         "pack": "electron-builder --dir",
-        "dist": "electron-builder"
+        "dist": "electron-builder",
+        "lint": "eslint . --ext .js",
+        "lint-and-fix": "eslint . --ext .js --fix"
     },
     "author": "TeamCoffeeCodes <coffee@teamcoffee.codes>",
     "license": "MIT",
