@@ -4,7 +4,7 @@ This app reminds you to check your sitting position while working to help you st
 
 ## Installation
 
-You can download the latest installer from the [GitHub Releases Page](https://github.com/KokosnussDEV/posture-check-app/releases)
+You can download the latest installer from the [GitHub Releases Page](https://github.com/LEDBrain/posture-check-app/releases)
 
 ## Credits
 

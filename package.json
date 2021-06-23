@@ -13,8 +13,8 @@
         "lint-and-fix": "eslint . --ext .js --fix",
         "postinstall": "electron-builder install-app-deps"
     },
-    "author": "TeamCoffeeCodes <coffee@teamcoffee.codes>",
-    "license": "MIT",
+    "author": "LEDBrain <opensource@ledbrain.de>",
+    "license": "SEE LICENSE IN LICENSE",
     "devDependencies": {
         "electron": "^13.1.4",
         "electron-builder": "^22.11.7",
@@ -25,16 +25,16 @@
     "dependencies": {
         "ms": "^2.1.3"
     },
-    "repository": "github:TeamCoffeeCodes/posture-check-app",
+    "repository": "github:LEDBrain/posture-check-app",
     "build": {
-        "appId": "codes.teamcoffee.posture-check-app",
+        "appId": "de.ledbrain.posture-check-app",
         "mac": {
             "target": "default",
             "category": "public.app-category.utilities",
             "icon": "src/assets/posture_check.png"
         },
         "win": {
-            "publisherName": "TeamCoffeeCodes",
+            "publisherName": "LEDBrain",
             "icon": "src/assets/posture_check.png",
             "target": [
                 {
