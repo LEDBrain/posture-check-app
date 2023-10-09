@@ -16,8 +16,8 @@
     "author": "LEDBrain <opensource@ledbrain.de>",
     "license": "SEE LICENSE IN LICENSE",
     "devDependencies": {
-        "electron": "^18.2.0",
-        "electron-builder": "^23.0.3",
+        "electron": "^26.3.0",
+        "electron-builder": "^23.6.0",
         "eslint": "^8.51.0",
         "eslint-plugin-prettier": "^4.0.0",
         "prettier": "^3.0.3"
