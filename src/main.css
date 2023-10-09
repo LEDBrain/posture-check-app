@@ -22,6 +22,7 @@ p {
     user-select: none;
     font-family: 'Montserrat', sans-serif;
     color: black;
+    font-weight: 900;
 }
 
 .outer-container {
