@@ -17,7 +17,7 @@
     "license": "SEE LICENSE IN LICENSE",
     "devDependencies": {
         "electron": "^18.2.0",
-        "electron-builder": "^23.0.3",
+        "electron-builder": "^24.6.4",
         "eslint": "^8.14.0",
         "eslint-plugin-prettier": "^4.0.0",
         "prettier": "^2.6.2"
